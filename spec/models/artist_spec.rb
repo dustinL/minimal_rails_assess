@@ -1,0 +1,4 @@
+describe Artist do
+
+
+end
