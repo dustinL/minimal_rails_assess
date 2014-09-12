@@ -1,15 +1,15 @@
 class ArtistsController < ApplicationController
 
   def index
-    @artist = Artist.all
+    @artists = Artist.all
     render('artists/index.html.erb')
   end
 
   def create
     @artist = Artist.new(params[:artist])
-    if stop.save
+    if @artist.save
       flash[:notice] = "Artist created!"
-      redirect_to('artists/index.html.erb')
+      redirect_to('/artists')
     else
       render('artists/new.html.erb')
     end
@@ -18,6 +18,11 @@ class ArtistsController < ApplicationController
   def new
     @artist = Artist.new
     render('artists/new.html.erb')
+  end
+
+  def show
+    @artist = Artist.find(params[:id])
+    render('artists/show.html.erb')
   end
 
 end
