@@ -25,4 +25,13 @@ class ArtistsController < ApplicationController
     render('artists/show.html.erb')
   end
 
+  def edit
+    @artist = Artist.find(params[:id])
+    render('artists/edit.html.erb')
+  end
+
+  def update
+
+  end
+
 end

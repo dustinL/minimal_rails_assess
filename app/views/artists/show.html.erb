@@ -5,3 +5,10 @@
 </div>
 
 <h3>Upcoming <%= @artist.name %> Shows:</h3>
+
+<br>
+<p><a href="/artists/<%= @artist.id %>/edit">Edit Artist</a></p>
+<p><a href="/artists/<%= @artist.id %>"
+      data-confirm="Are you sure?"
+      data-method="delete"
+      rel="nofollow">Delete Artist</a></p>
