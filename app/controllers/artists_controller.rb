@@ -31,7 +31,13 @@ class ArtistsController < ApplicationController
   end
 
   def update
-
+    @artist = Artist.find(params[:id])
+    if @artist.update(params[:artist])
+      flash[:notice] = "Artist name updated!"
+      redirect_to('/artists')
+    else
+      render('/artists/edit.html.erb')
+    end
   end
 
 end
