@@ -7,18 +7,18 @@ class ShowsController < ApplicationController
   # end
 
   def create
-    @artist = Artist.find(params[:id])
+    @artist = Artist.find(params[:artist_id])
     @show = Show.new(params[:show])
     if @show.save
       flash[:notice] = "New show created!"
-      redirect_to('/')
+      redirect_to("/artists/#{@artist.id}")
     else
       render('shows/new.html.erb')
     end
   end
 
   def new
-    @artist = Artist.new
+    @artist = Artist.find(params[:artist_id])
     @show = Show.new
     render('shows/new.html.erb')
   end

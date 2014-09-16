@@ -10,16 +10,13 @@
   </ul>
 <% end %>
 
-<h3>Add New Show</h3>
-<br>
+<h3>Add a Show for <%= @artist.name %></h3>
 
-<%= form_for(@show) do |f| %>
-  <div class="form-group">
-    <%= f.collection_select :artist_id, Artist.all, :id, :name %>
-    <%= f.label :date, "Date: " %>
-    <%= f.text_field :date, placeholder: "yyy-mm-dd"  %>
-    <%= f.label :location, 'Location:' %>
-    <%= f.text_field :location %>
-  </div>
-  <%= f.submit(:class => "btn btn-primary") %>
-<% end %>
+<form action='/artists/<%= @artist.id %>/shows' method='post'>
+
+  <br> <label for='show_date'>Date:</label>
+  <input id='show_date' name='show[date]' type="date"><br>
+  <br><label for='show_location'>Location:</label>
+  <input id='show_location' name='show[location]' type="text"><br>
+  <br><button>Submit</button>
+</form>
