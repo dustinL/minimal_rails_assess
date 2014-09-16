@@ -5,8 +5,15 @@
 </div>
 
 <h3>Upcoming <%= @artist.name %> Shows:</h3>
+<ul>
+  <% @artist.shows.each do |show| %>
+    <li><%= show.date %> | <%= show.location %></li>
+  <% end %>
+</ul>
+
 
 <br>
+<p><a href="/artists/<%= @artist.id %>/new">Add New Show</a></p>
 <p><a href="/artists/<%= @artist.id %>/edit">Edit Artist</a></p>
 <p><a href="/artists/<%= @artist.id %>"
       data-confirm="Wait, really??"

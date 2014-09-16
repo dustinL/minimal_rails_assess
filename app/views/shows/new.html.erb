@@ -1,0 +1,25 @@
+<% content_for(:title, "Add Show | Concert Cal") %>
+
+<% if @show.errors.any? %>
+  <h3>Please fix these errors:</h3>
+
+  <ul>
+    <% @show.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h3>Add New Show</h3>
+<br>
+
+<%= form_for(@show) do |f| %>
+  <div class="form-group">
+    <%= f.collection_select :artist_id, Artist.all, :id, :name %>
+    <%= f.label :date, "Date: " %>
+    <%= f.text_field :date, placeholder: "yyy-mm-dd"  %>
+    <%= f.label :location, 'Location:' %>
+    <%= f.text_field :location %>
+  </div>
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>

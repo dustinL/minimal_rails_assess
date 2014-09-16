@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   match('/artists/:id/edit', {:via => :get, :to => "artists#edit"})
   match('/artists/:id', {:via => [:patch, :put], :to => "artists#update"})
   match('/artists/:id', {:via => :delete, :to => 'artists#destroy'})
+
+  # match('/shows', {:via => :get, :to => "shows#index"})
+  match('/artists/:artist_id', {:via => :post, :to => "shows#create"})
+  match('/artists/:artist_id/new', {:via => :get, :to => "shows#new"})
 end
