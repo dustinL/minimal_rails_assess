@@ -1,11 +1,5 @@
 class ShowsController < ApplicationController
 
-  # def index
-  #   @artist = Artist.find(params[:id])
-  #   @shows = @artist.shows.all
-  #   render('shows/index.html.erb')
-  # end
-
   def create
     @artist = Artist.find(params[:artist_id])
     @show = Show.new(params[:show])

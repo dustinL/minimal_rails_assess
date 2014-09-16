@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   match('/artists/:id', {:via => [:patch, :put], :to => "artists#update"})
   match('/artists/:id', {:via => :delete, :to => 'artists#destroy'})
 
-  match('/shows', {:via => :get, :to => "shows#index"})
   match('/artists/:artist_id/shows', {:via => :post, :to => "shows#create"})
   match('/artists/:artist_id/shows/new', {:via => :get, :to => "shows#new"})
 end
