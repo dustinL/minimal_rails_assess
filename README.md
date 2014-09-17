@@ -1,6 +1,6 @@
 #Minimal Magic Rails - Epicodus Assessment#
 
-####[Concert Collector] (http://---.herokuapp.com) on Heroku
+####[Concert Collector] (http://concert-cal-v1.herokuapp.com) on Heroku
 
 ####Written by Dustin Lewis
 
